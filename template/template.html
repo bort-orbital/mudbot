@@ -1,0 +1,40 @@
+<html>
+<head>
+    <style>
+        body {
+            background-color: #000;
+            padding-left: 100px;
+            padding-right: 100px;
+            overflow-y: scroll;
+        }
+        pre {
+            white-space: pre-wrap; /* Since CSS 2.1 */
+            white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+            white-space: -pre-wrap; /* Opera 4-6 */
+            white-space: -o-pre-wrap; /* Opera 7 */
+            word-wrap: break-word; /* Internet Explorer 5.5+ */
+        }
+        .assistant {
+            color: #92f292;
+        }
+        .user {
+            color: #f2f2f2
+        }
+    </style>
+
+</head>
+<body>
+{% for message in messages %}
+        <div class="{{ message.role }}">
+            <pre>
+            <p>{{message.content}}</p>
+            </pre>
+        </div>
+
+{% endfor %}
+
+
+</body>
+
+
+</html>
